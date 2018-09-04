@@ -9,15 +9,27 @@ namespace practice1 {
         static void Main(string[] args) {
 
             Random num = new Random();
+            
+            Console.WriteLine("Please choose two numbers as boundaires.");
+            Console.Write("Choose your first number: ");
+            int x = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            Console.Write("Choose your second number: ");
+            int y = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            int correctNum = num.Next(0, 100);
+            int correctNum = num.Next(x, y);
 
             bool win = false;
             int counter = 0;
 
             do
             {
-                Console.Write("Guess a number between 0 and 100:  ");
+                Console.Write("Guess a number between ");
+                Console.Write(x);
+                Console.Write(" and ");
+                Console.Write(y);
+                Console.Write(".  ");
                 string s = Console.ReadLine();
 
                 int guess = int.Parse(s);
